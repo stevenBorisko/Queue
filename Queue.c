@@ -2,11 +2,17 @@
 
 #include <stdlib.h>
 
-Queue Queue_create() {
+Queue Queue_init() {
 	Queue ret;
 	ret.front = NULL;
 	ret.back = NULL;
 	ret.count = 0;
+	return ret;
+}
+
+Queue* Queue_create() {
+	Queue* ret = malloc(sizeof(Queue));
+	*ret = Queue_init();
 	return ret;
 }
 

@@ -13,28 +13,91 @@ typedef struct {
 	unsigned int count;
 }Queue;
 
-Queue Queue_create();
+/*
+return		(Queue)
+	initialized Queue
 
-// Inserts a new element to the back of the queue
+Creates a Queue and initializes it to an empty queue
+*/
+Queue Queue_init();
+
+/*
+return		(Queue*)
+	malloc'ed and initialized Queue
+
+Allocates space for and initializes a Queue
+*/
+Queue* Queue_create();
+
+/*
+param	queue	(Queue*)
+	queue to which p:data will be enqueued
+param	data	(void*)
+	data to be enqueued to p:queue
+return		(void)
+
+Inserts a new element to the back of the queue
+*/
 void Queue_enqueue(Queue* queue, void* data);
 
-// Removes the element at the front of the queue and returns it
+/*
+param	queue	(Queue*)
+	queue from which the return value will be dequeued
+return		(void*)
+	data dequeued from p:queue
+
+Removes the element at the front of the queue and returns it
+*/
 void* Queue_dequeue(Queue* queue);
 
-// Returns the front of the queue
+/*
+param	queue	(const Queue*)
+	queue to be inspected
+return		(void*)
+	the next object to be dequeued from p:queue
+
+Returns the front of the queue
+*/
 void* Queue_front(const Queue* queue);
 
-// Returns the back of the queue
+/*
+param	queue	(const Queue*)
+	queue to be inspected
+return		(void*)
+	the last object that was enqueued to p:queue
+
+Returns the back of the queue
+*/
 void* Queue_back(const Queue* queue);
 
-// Returns whether the queue is empty
+/*
+param	queue	(const Queue*)
+	queue to be inspected
+return		(int)
+	whether the p:queue contains any elements
+
+Returns whether the queue is empty
+*/
 int Queue_isEmpty(const Queue* queue);
 
-// Returns the number of elements in the queue
+/*
+param	queue	(const Queue*)
+	queue to be inspected
+return		(unsigned int)
+	count of all the elements in p:queue
+
+Returns the number of elements in the queue
+*/
 unsigned int Queue_count(const Queue* queue);
 
-// Destroys all elements from the stack (freeing the data within the nodes)
-// Second parameter is a function that destroys the 'data' member of elements
+/*
+param	queue	(Queue*)
+	queue to be cleared
+param	destroy	(void (void*))
+	function that handles the freeing of v:data in each element of p:queue
+
+Empties the queue
+*/
 void Queue_clear(Queue* queue, void (*destroy)(void*));
 
 #endif
