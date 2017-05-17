@@ -72,7 +72,7 @@ void* Queue_dequeue(Queue* queue);
 param	queue	(const Queue*)
 	queue to be inspected
 return		(void*)
-	the next object to be dequeued from p:queue
+	the next element to be dequeued from p:queue
 
 Returns the front of the queue
 */
@@ -82,7 +82,7 @@ void* Queue_front(const Queue* queue);
 param	queue	(const Queue*)
 	queue to be inspected
 return		(void*)
-	the last object that was enqueued to p:queue
+	the last element that was enqueued to p:queue
 
 Returns the back of the queue
 */
@@ -113,6 +113,7 @@ param	queue	(Queue*)
 	queue to be cleared
 param	destroy	(void (void*))
 	function that handles the freeing of v:data in each element of p:queue
+return		(void)
 
 Empties the queue
 */

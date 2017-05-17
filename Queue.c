@@ -79,7 +79,7 @@ void Queue_clear(Queue* queue, void (*destroy)(void*)) {
 		queue->front = frontNext;
 	}
 
-	// reinitialize values
+	// reset values
 	queue->back = NULL;
 	queue->count = 0;
 }
