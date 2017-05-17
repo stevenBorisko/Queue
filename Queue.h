@@ -1,12 +1,32 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+/*
+var	data	(void*)
+	the data stored in the queue
+var	next	(struct QueueNode*)
+	one node closer to the front of the queue
+var	prev	(struct QueueNode*)
+	one node closer to the back of the queue
+
+Wrapper struct for storing data in a Queue
+*/
 struct QueueNode {
 	void* data;
 	struct QueueNode* next;
 	struct QueueNode* prev;
 };
 
+/*
+var	front	(struct QueueNode*)
+	the front of the queue, i.e. the next element to be dequeued
+var	back	(struct QueueNode*)
+	the back of the queue, i.e. the last element that was enqueued
+var	count	(unsigned int)
+	the number of elements in the queue
+
+FIFO data structure. Functions found below
+*/
 typedef struct {
 	struct QueueNode* front;
 	struct QueueNode* back;
