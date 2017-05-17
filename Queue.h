@@ -5,16 +5,14 @@
 var	data	(void*)
 	the data stored in the queue
 var	next	(struct QueueNode*)
-	one node closer to the front of the queue
-var	prev	(struct QueueNode*)
 	one node closer to the back of the queue
+	i.e. the next node in line
 
 Wrapper struct for storing data in a Queue
 */
 struct QueueNode {
 	void* data;
 	struct QueueNode* next;
-	struct QueueNode* prev;
 };
 
 /*
