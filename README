@@ -1,9 +1,11 @@
-This is a struct called Stack that is a
+This is a struct called Queue that is a
 generic stack data structure.
 
 This, like all the other C data structure repositories on my Github,
 was made so that neither you nor I will ever have to rewrite any of them
 again for any other projects in the future.
+
+Functions of a Queue (documentation in header file)
 
 Creating a Queue
 Queue Queue_init();
