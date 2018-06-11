@@ -1,7 +1,5 @@
 #include "Queue.h"
 
-#include <stdlib.h>
-
 Queue Queue_init() {
 	Queue ret;
 
@@ -31,6 +29,22 @@ void Queue_enqueue(Queue* queue, void* data) {
 
 	// handle the case where this is the first node in the queue
 	if(!queue->front) queue->front = newBack;
+
+	++(queue->count);
+}
+
+void Queue_preempt(Queue* queue, void* data) {
+	struct QueueNode* newFront = malloc(sizeof(struct QueueNode));
+
+	// Initialize the new node
+	newFront->data = data;
+	newFront->next = queue->front;
+
+	// set the front to the new node
+	queue->front = newFront;
+
+	// handle the case where this is the first node in the queue
+	if(!queue->back) queue->back = newFront;
 
 	++(queue->count);
 }

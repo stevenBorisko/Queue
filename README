@@ -1,23 +1,39 @@
-This is a struct called Queue that is a
-generic queue data structure.
+Generic queue data structure
 
 This, like all the other C data structure repositories on my Github,
 was made so that neither you nor I will ever have to rewrite any of them
 again for any other projects in the future.
 
-Functions of a Queue (documentation in header file)
+Full documentation on usage is found in Queue.h
 
-Creating a Queue
-Queue Queue_init();
-Queue* Queue_create();
+Structs:
+	struct QueueNode:
+		- Wrapper struct for storing data in a Queue
+	Queue:
+		- FIFO data structure
 
-Insertion and removal
-void Queue_enqueue(Queue* queue, void* data);
-void* Queue_dequeue(Queue* queue);
+Queue Creation Functions:
+	Queue Queue_init()
+		- Creates a Queue and initializes it to an empty queue
+	Queue* Queue_create()
+		- Allocates space for and initializes a Queue
 
-Miscellaneous
-void* Queue_front(const Queue* queue);
-void* Queue_back(const Queue* queue);
-int Queue_isEmpty(const Queue* queue);
-unsigned int Queue_count(const Queue* queue);
-void Queue_clear(Queue* queue, void (*destroy)(void*));
+Queue Insertion and Removal Functions:
+	void Queue_enqueue(Queue* queue, void* data)
+		- Inserts a new element to the back of the queue
+	void Queue_preempt(Queue* queue, void* data)
+		- Inserts a new element to the front of the queue
+	void* Queue_dequeue(Queue* queue)
+		- Removes the element at the front of the queue and returns it
+
+Queue Miscellaneous Functions:
+	void* Queue_front(const Queue* queue);
+		- Returns the front of the queue
+	void* Queue_back(const Queue* queue);
+		- Returns the back of the queue
+	int Queue_isEmpty(const Queue* queue);
+		- Returns whether the queue is empty
+	unsigned int Queue_count(const Queue* queue);
+		- Returns the number of elements in the queue
+	void Queue_clear(Queue* queue, void (*destroy)(void*));
+		- Empties the queue
