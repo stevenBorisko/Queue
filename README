@@ -15,8 +15,6 @@ Structs:
 Queue Creation Functions:
 	Queue Queue_init()
 		- Creates a Queue and initializes it to an empty queue
-	Queue* Queue_create()
-		- Allocates space for and initializes a Queue
 
 Queue Insertion and Removal Functions:
 	void Queue_enqueue(Queue* queue, void* data)

@@ -56,16 +56,6 @@ Creates a Queue and initializes it to an empty queue
 Queue Queue_init();
 
 /*
---- Queue_create ---
-
-return (Queue*)
-	Malloc'ed and initialized Queue
-
-Allocates space for and initializes a Queue
-*/
-Queue* Queue_create();
-
-/*
 --- Queue_enqueue ---
 
 queue (Queue*)

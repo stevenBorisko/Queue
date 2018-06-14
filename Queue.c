@@ -10,12 +10,6 @@ Queue Queue_init() {
 	return ret;
 }
 
-Queue* Queue_create() {
-	Queue* ret = malloc(sizeof(Queue));
-	*ret = Queue_init();
-	return ret;
-}
-
 void Queue_enqueue(Queue* queue, void* data) {
 	struct QueueNode* newBack = malloc(sizeof(struct QueueNode));
 
